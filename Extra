@@ -1,0 +1,9 @@
+$("select[name=EXTRA]").change(function ()
+    {
+        var base_price = $("input[name=PRICE_BASE]").val();
+        var extra = $(this).val();
+        var price = (base_price * extra) / 100 + Number(base_price);
+        $("input[name=PRICE]")
+            .attr("readonly", "readonly")
+            .val(price);
+    });
